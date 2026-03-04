@@ -1,218 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>KARMAKS LLC | Truck & Trailer Aftermarket Parts</title>
 
-<link rel="icon" type="image/png" href="/favicon.png?v=4">
+<link rel="icon" type="image/png" href="/favicon.png?v=5">
+<link rel="shortcut icon" href="/favicon.png?v=5">
+<link rel="apple-touch-icon" href="/favicon.png?v=5">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --text:#fff;
+  --muted:rgba(255,255,255,.78);
+  --muted2:rgba(255,255,255,.62);
+  --line:rgba(255,255,255,.16);
+  --red:#ff2a2a;
+}
+
+*{box-sizing:border-box}
 
 body{
-margin:0;
-font-family:'Montserrat',sans-serif;
-color:white;
-text-align:center;
+  margin:0;
+  min-height:100vh;
+  font-family:'Montserrat',system-ui,Arial,sans-serif;
+  color:var(--text);
+  text-align:center;
 
-background:
-linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-url("./truck.jpeg.png?v=4");
+  /* Premium background stack */
+  background:
+    radial-gradient(900px 520px at 50% 40%, rgba(255,255,255,.10), transparent 60%),
+    radial-gradient(1200px 800px at 50% 110%, rgba(0,0,0,.55), transparent 60%),
+    linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.45)),
+    url("./truck.jpeg.png?v=5");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
+/* Vignette overlay (premium focus) */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(1400px 900px at 50% 40%, transparent 40%, rgba(0,0,0,.55) 100%);
 }
 
 .wrapper{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:30px;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px 16px 70px;
 }
 
 .card{
+  width:min(980px, 94vw);
+  padding:40px 22px;
+  border-radius:20px;
 
-width:900px;
-max-width:95%;
+  /* Glass gradient */
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.09),
+    rgba(0,0,0,.10)
+  );
 
-padding:40px;
-
-border-radius:18px;
-
-background:rgba(0,0,0,0.12);
-
-backdrop-filter:blur(6px);
-
-border:1px solid rgba(255,255,255,0.18);
-
-box-shadow:0 20px 60px rgba(0,0,0,0.35);
-
+  border:1px solid var(--line);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 24px 80px rgba(0,0,0,.38);
 }
 
 h1{
-margin:0;
-font-size:58px;
-letter-spacing:6px;
-font-weight:800;
+  margin:0;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:clamp(34px, 5.2vw, 60px);
+  line-height:1.06;
+
+  /* Micro contrast */
+  text-shadow: 0 10px 30px rgba(0,0,0,.55);
 }
 
 .subtitle{
-
-margin-top:10px;
-
-font-size:18px;
-
-letter-spacing:4px;
-
-color:#ddd;
-
+  margin-top:10px;
+  font-weight:600;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:clamp(13px, 2.1vw, 18px);
 }
 
 .line{
-
-width:120px;
-height:3px;
-
-background:#ff2a2a;
-
-margin:22px auto;
-
+  width:140px;
+  height:3px;
+  margin:22px auto 18px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+  border-radius:999px;
 }
 
 .status{
-
-font-size:20px;
-
-font-weight:700;
-
-color:#ff2a2a;
-
-letter-spacing:3px;
-
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--red);
+  font-size:clamp(14px, 2.2vw, 18px);
 }
 
 .meta{
-
-margin-top:12px;
-
-font-size:14px;
-
-letter-spacing:3px;
-
-color:#cccccc;
-
+  margin-top:12px;
+  font-size:clamp(12px, 1.9vw, 14px);
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--muted2);
 }
 
 .contact{
-
-margin-top:35px;
-
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
 }
 
-.contact-label{
-
-font-size:12px;
-
-letter-spacing:4px;
-
-opacity:0.7;
-
-margin-bottom:10px;
-
+.pill{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.12);
+  color:rgba(255,255,255,.72);
+  font-size:12px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
 }
 
 .email{
-
-display:inline-block;
-
-padding:14px 22px;
-
-border-radius:12px;
-
-background:rgba(255,255,255,0.10);
-
-border:1px solid rgba(255,255,255,0.25);
-
-color:white;
-
-text-decoration:none;
-
-font-weight:600;
-
-transition:0.2s;
-
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 22px;
+  border-radius:14px;
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.22);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:.06em;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  text-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
-
 .email:hover{
-
-background:rgba(255,255,255,0.18);
-
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.30);
 }
 
 .footer{
-
-position:fixed;
-
-bottom:20px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-font-size:12px;
-
-letter-spacing:4px;
-
-opacity:0.6;
-
+  position:fixed;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:12px;
+  letter-spacing:.30em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.72);
+  padding:8px 12px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  background: rgba(0,0,0,.16);
+  backdrop-filter: blur(6px);
 }
 
+/* Mobile tweaks */
+@media (max-width:480px){
+  .card{padding:30px 16px}
+}
 </style>
-
 </head>
 
 <body>
+  <div class="wrapper">
+    <div class="card">
+      <h1>KARMAKS LLC</h1>
+      <div class="subtitle">TRUCK & TRAILER AFTERMARKET PARTS</div>
 
-<div class="wrapper">
+      <div class="line"></div>
 
-<div class="card">
+      <div class="status">SOURCING & DISTRIBUTION IN PROGRESS</div>
+      <div class="meta">GLOBAL SOURCING • PRIVATE LABEL • AFTERMARKET PARTS</div>
 
-<h1>KARMAKS LLC</h1>
+      <div class="contact">
+        <span class="pill">Contact</span>
+        <a class="email" href="mailto:kara@karmaks.com">kara@karmaks.com</a>
+      </div>
+    </div>
+  </div>
 
-<div class="subtitle">TRUCK & TRAILER AFTERMARKET PARTS</div>
-
-<div class="line"></div>
-
-<div class="status">SOURCING & DISTRIBUTION IN PROGRESS</div>
-
-<div class="meta">GLOBAL SOURCING • PRIVATE LABEL • AFTERMARKET PARTS</div>
-
-<div class="contact">
-
-<div class="contact-label">CONTACT</div>
-
-<a class="email" href="mailto:kara@karmaks.com">
-kara@karmaks.com
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="footer">
-02.02
-</div>
-
+  <div class="footer">02.02</div>
 </body>
 </html>
